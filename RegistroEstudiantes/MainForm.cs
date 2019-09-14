@@ -1,5 +1,6 @@
 ﻿using RegistroEstudiantes.Entidades;
 using RegistroEstudiantes.UI.Registros;
+using RegistroEstudiantes.UI.Consultas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,12 +23,32 @@ namespace RegistroEstudiantes
 
         private void PersonaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //rEstudiantes rEstudiantes = new rEstudiantes();
-            FormREstudiantes frm = new FormREstudiantes();
-            //frm.MdiParent = this;
-            frm.Show();
-           //rEstudiantes.Show();
+            
+            FormREstudiantes rEstudiantes = new FormREstudiantes();
+            rEstudiantes.MdiParent = this;
+            rEstudiantes.Show();
 
+        }
+
+        private void EstudianteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cEstudiantes cEstudiantes = new cEstudiantes();
+            cEstudiantes.MdiParent = this;
+            cEstudiantes.Show();
+        }
+
+        private void InscripcionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rInscripciones rInscripciones = new rInscripciones();
+            rInscripciones.MdiParent = this;
+            rInscripciones.Show();
+        }
+
+        private void InscripcionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cInscripcion cInscripcion = new cInscripcion();
+            cInscripcion.MdiParent = this;
+            cInscripcion.Show();
         }
     }
 }

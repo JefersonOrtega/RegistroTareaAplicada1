@@ -51,11 +51,14 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\EstudiantesBLL.cs" />
+    <Compile Include="BLL\InscripcionesBLL.cs" />
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Entidades\Estudiantes.cs" />
+    <Compile Include="Entidades\Inscripciones.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,11 +67,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\Consultas\ConsultaEstudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\ConsultaEstudiante.Designer.cs">
+      <DependentUpon>ConsultaEstudiante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Consultas\ConsultaInscripcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\ConsultaInscripcion.Designer.cs">
+      <DependentUpon>ConsultaInscripcion.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Registros\rEstudiantes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Registros\rEstudiantes.Designer.cs">
       <DependentUpon>rEstudiantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\rInscripciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rInscripciones.Designer.cs">
+      <DependentUpon>rInscripciones.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -82,8 +103,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\Consultas\ConsultaEstudiante.resx">
+      <DependentUpon>ConsultaEstudiante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\ConsultaInscripcion.resx">
+      <DependentUpon>ConsultaInscripcion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rEstudiantes.resx">
       <DependentUpon>rEstudiantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rInscripciones.resx">
+      <DependentUpon>rInscripciones.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -101,7 +131,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
-    <Folder Include="UI\Consultas\" />
     <Folder Include="UI\Reportes\" />
   </ItemGroup>
   <ItemGroup>

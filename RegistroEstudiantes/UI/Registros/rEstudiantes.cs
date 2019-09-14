@@ -66,7 +66,7 @@ namespace RegistroEstudiantes.UI.Registros
             estudiante.Celular = CelularMaskedTextBox.Text;
             estudiante.Email = EmailTextBox.Text;
             estudiante.Sexo = Convert.ToInt32(SexoComboBox.SelectedIndex);
-            estudiante.Balance = Convert.ToInt32(BalanceTextBox.Text);
+            //estudiante.Balance = Convert.ToInt32(BalanceTextBox.Text);
             estudiante.FechaNacimiento = FechaNacimientoDateTimePicker.Value;
 
             return estudiante;
@@ -82,7 +82,8 @@ namespace RegistroEstudiantes.UI.Registros
             TelefonoMaskedTextBox.Text = estudiante.Telefono;
             CelularMaskedTextBox.Text = estudiante.Celular;
             EmailTextBox.Text = estudiante.Email;
-            SexoComboBox.Text = Convert.ToString(estudiante.Sexo);
+            ///
+            SexoComboBox.SelectedItem = estudiante.Sexo;
             BalanceTextBox.Text = Convert.ToString(estudiante.Balance);
             FechaNacimientoDateTimePicker.Value = estudiante.FechaNacimiento;
         }
@@ -151,12 +152,6 @@ namespace RegistroEstudiantes.UI.Registros
             {
                 MyErrorProvider.SetError(CedulaMaskedTextBox, "El campo Cedula no puede estar vacio");
                 CedulaMaskedTextBox.Focus();
-                paso = false;
-            }
-            if (string.IsNullOrWhiteSpace(BalanceTextBox.Text))
-            {
-                MyErrorProvider.SetError(BalanceTextBox, "El campo Balance no puede estar vacio");
-                BalanceTextBox.Focus();
                 paso = false;
             }
             return paso;

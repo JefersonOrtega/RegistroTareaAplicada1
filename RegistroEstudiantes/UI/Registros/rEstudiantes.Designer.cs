@@ -64,7 +64,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 23);
+            this.label1.Location = new System.Drawing.Point(21, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 13);
             this.label1.TabIndex = 0;
@@ -163,7 +163,7 @@
             // 
             // IDnumericUpDown
             // 
-            this.IDnumericUpDown.Location = new System.Drawing.Point(143, 23);
+            this.IDnumericUpDown.Location = new System.Drawing.Point(143, 25);
             this.IDnumericUpDown.Name = "IDnumericUpDown";
             this.IDnumericUpDown.Size = new System.Drawing.Size(53, 20);
             this.IDnumericUpDown.TabIndex = 12;
@@ -171,6 +171,7 @@
             // BuscarButton
             // 
             this.BuscarButton.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.BuscarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BuscarButton.Image = ((System.Drawing.Image)(resources.GetObject("BuscarButton.Image")));
             this.BuscarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BuscarButton.Location = new System.Drawing.Point(247, 12);
@@ -238,12 +239,14 @@
             // 
             this.BalanceTextBox.Location = new System.Drawing.Point(143, 296);
             this.BalanceTextBox.Name = "BalanceTextBox";
+            this.BalanceTextBox.ReadOnly = true;
             this.BalanceTextBox.Size = new System.Drawing.Size(198, 20);
             this.BalanceTextBox.TabIndex = 23;
             // 
             // NuevoButton
             // 
             this.NuevoButton.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.NuevoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.NuevoButton.Image = ((System.Drawing.Image)(resources.GetObject("NuevoButton.Image")));
             this.NuevoButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.NuevoButton.Location = new System.Drawing.Point(24, 350);
@@ -258,6 +261,7 @@
             // EliminarButton
             // 
             this.EliminarButton.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.EliminarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EliminarButton.Image = ((System.Drawing.Image)(resources.GetObject("EliminarButton.Image")));
             this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.EliminarButton.Location = new System.Drawing.Point(261, 348);
@@ -272,6 +276,7 @@
             // GuardarButton
             // 
             this.GuardarButton.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.GuardarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GuardarButton.Image = ((System.Drawing.Image)(resources.GetObject("GuardarButton.Image")));
             this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.GuardarButton.Location = new System.Drawing.Point(143, 348);
@@ -285,6 +290,7 @@
             // 
             // FechaNacimientoDateTimePicker
             // 
+            this.FechaNacimientoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.FechaNacimientoDateTimePicker.Location = new System.Drawing.Point(143, 242);
             this.FechaNacimientoDateTimePicker.Name = "FechaNacimientoDateTimePicker";
             this.FechaNacimientoDateTimePicker.Size = new System.Drawing.Size(198, 20);

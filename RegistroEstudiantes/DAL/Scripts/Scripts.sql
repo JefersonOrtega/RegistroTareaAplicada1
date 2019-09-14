@@ -1,3 +1,4 @@
+create database EstudiantesDb
 USE EstudiantesDb
 GO
 CREATE TABLE Estudiantes
@@ -14,3 +15,19 @@ CREATE TABLE Estudiantes
 	Sexo int, 
 	Balance float(12)
 );
+Go
+
+CREATE TABLE Inscripciones
+(
+	IncripcionId int primary key identity(1,1), 
+	Fecha date, 
+	EstudianteId int, 
+	Comentarios varchar(max), 
+	Monto float(7),
+	Deposito float(7), 
+	Balance float(7)
+	CONSTRAINT fk_EstudianteID FOREIGN KEY (EstudianteId) REFERENCES Estudiantes(EstudianteId) 
+)
+
+
+

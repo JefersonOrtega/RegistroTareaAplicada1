@@ -8,24 +8,24 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace RegistroEstudiantes.BLL
 {
-    public class EstudiantesBLL
+    /// <summary>
+    /// Logica de Negocios
+    /// </summary>
+    public class InscripcionesBLL
     {
         
-
-        ///<Summary>
-        ///Permite guardar una entidad en la base de datos
-        ///</Summary>
-
-        public static bool guardar(Estudiantes estudiante)
+        /// <summary>
+        /// Metodo para Guardar en la base de datos
+        /// </summary>
+        public static bool Guardar(Inscripciones inscripcion)
         {
-            bool paso = false; //Si termina como false algo fallo, sino todo paso bien
+            bool paso = false;
             Contexto db = new Contexto();
             try
             {
-                if (db.Estudiante.Add(estudiante) != null)
+                if (db.Inscripcion.Add(inscripcion) != null)
                     paso = db.SaveChanges() > 0;
             }
             catch(Exception)
@@ -34,21 +34,22 @@ namespace RegistroEstudiantes.BLL
             }
             finally
             {
-                db.Dispose(); //Para cerrar la conexion, siempre hay que hacerlo
+                db.Dispose();
             }
             return paso;
         }
 
-        ///<summary>
-        ///Permite modificar una persona en la base de datos
-        ///</summary>
-        public static bool modificar(Estudiantes estudiante)
+        /// <summary>
+        /// Permite Modificar en la base de datos
+        /// </summary>
+        public static bool Modificar(Inscripciones inscripcion)
         {
             bool paso = false;
             Contexto db = new Contexto();
+
             try
             {
-                db.Entry(estudiante).State = EntityState.Modified;
+                db.Entry(inscripcion).State = EntityState.Modified;
                 paso = db.SaveChanges() > 0;
             }
             catch (Exception)
@@ -62,40 +63,37 @@ namespace RegistroEstudiantes.BLL
             return paso;
         }
 
-        ///<summary>
-        ///Perminte eliminar entidades de una base de datos
-        /// </summary>
-        public static bool eliminar(int id)
+        public static bool Eliminar(int id)
         {
             bool paso = false;
             Contexto db = new Contexto();
             try
             {
-                var eliminar = db.Estudiante.Find(id);
+                var eliminar = db.Inscripcion.Find(id);
                 db.Entry(eliminar).State = EntityState.Deleted;
 
                 paso = db.SaveChanges() > 0;
             }
-            catch (Exception)
+            catch(Exception)
             {
-                throw;
+                throw; 
             }
             finally
             {
                 db.Dispose();
             }
             return paso;
-         }
+        }
 
-        public static Estudiantes buscar(int id)
+        public static Inscripciones Buscar(int id)
         {
             Contexto db = new Contexto();
-            Estudiantes estudiante = new Estudiantes();
+            Inscripciones inscripcion = new Inscripciones();
             try
             {
-                estudiante = db.Estudiante.Find(id);
+                inscripcion = db.Inscripcion.Find(id);
             }
-            catch
+            catch(Exception)
             {
                 throw;
             }
@@ -103,21 +101,18 @@ namespace RegistroEstudiantes.BLL
             {
                 db.Dispose();
             }
-            return estudiante;
+            return inscripcion;
         }
 
-        ///<summary>
-        ///permite extraer una lista de personas de la base de datos
-        /// </summary>
-        public static List<Estudiantes> GetList(Expression<Func<Estudiantes, bool>> estudiante)
+        public static List<Inscripciones> GetList(Expression<Func<Inscripciones, bool>> inscripcion)
         {
-            List<Estudiantes> Lista = new List<Estudiantes>();
+            List<Inscripciones> Lista = new List<Inscripciones>();
             Contexto db = new Contexto();
             try
             {
-                Lista = db.Estudiante.Where(estudiante).ToList();
+                Lista = db.Inscripcion.Where(inscripcion).ToList();
             }
-            catch
+            catch (Exception)
             {
                 throw;
             }
@@ -127,6 +122,7 @@ namespace RegistroEstudiantes.BLL
             }
             return Lista;
         }
+
 
 
     }
